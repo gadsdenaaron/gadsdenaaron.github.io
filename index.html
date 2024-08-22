@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
+    <script>
+        const x = document.getElementById("demo");
+        
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+          } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude +
+          "<br>Longitude: " + position.coords.longitude;
+        }
+        </script> 
+
 <body>
 
 <h1>For my Treasure</h1>
-<p>Can you solve the puzzle?</p>
+<p>Can you solve the puzzle?
+<button onclick="getLocation()">Try It</button>
+</p>
 
 </body>
 </html> 
