@@ -44,8 +44,8 @@ function checkPosition(position, target_lat, target_long) {
         document.getElementById("nextpage").style.display = "inline-block";
     }
     else {
-        document.getElementById("distance_text").textContent="<br>Distance from location: " + distance + " meters";
+        document.getElementById("distance_text").textContent="Distance from location: " + distance + " meters";
     }
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude + "<br>Distance from altona: " + getDistanceFromLatLonInKm(position.coords.latitude, position.coords.longitude, -37.78007, 144.76596);
+    // x.innerHTML = "Latitude: " + position.coords.latitude +
+    // "<br>Longitude: " + position.coords.longitude + "<br>Distance from altona: " + getDistanceFromLatLonInKm(position.coords.latitude, position.coords.longitude, -37.78007, 144.76596);
 }
