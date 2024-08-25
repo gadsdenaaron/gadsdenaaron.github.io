@@ -20,8 +20,8 @@ function deg2rad(deg) {
 
 function getLocation(callback_func, target_lat, target_long) {
     
-    function func(callback_func) {
-        callback_func(target_lat, target_long);
+    function func(position) {
+        callback_func(position, target_lat, target_long);
     }
     
     if (navigator.geolocation) {
