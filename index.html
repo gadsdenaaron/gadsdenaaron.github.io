@@ -9,12 +9,82 @@
     <head>
 		<title>Gorgeous</title>
 
+        <script>
+            function showLetter() {
+                document.getElementById("overlay").style.display = "flex";
+            }
+
+            function showEmoji() {
+                document.getElementById("normalText").style.display = "none";
+                document.getElementById("emojiText").style.display = "block";
+            }
+
+            function closeLetter() {
+                document.getElementById("overlay").style.display = "none";
+            }
+        </script>
+
         <style>
             purple-wordart {background: linear-gradient(183deg, #6000CA 10%, #CA00CD 70%);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             font-family: 'Impact';}
+
+            #closeBtn {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #666;
+                cursor: pointer;
+                }
+            #closeBtn:hover {
+                color: #000;
+                }
+            #textbox {
+                position: relative; /* so closeBtn can be positioned inside */
+                }
+
+            body {
+                margin: 0;
+                font-family: "Georgia", serif;
+                background: #000;
+            }
+            #overlay {
+                display: none; /* hidden by default */
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                background: rgba(0,0,0,0.6); /* dim background */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #textbox {
+                background: #fff;
+                padding: 20px 30px;
+                border-radius: 10px;
+                max-width: 600px;
+                line-height: 1.6;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+                text-align: left;
+            }
+            .btn {
+                display: block;
+                margin: 20px auto 0 auto;
+                padding: 8px 15px;
+                background: #f0f0f0;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 14px;
+            }
+            .btn:hover {
+                background: #e0e0e0;
+            }
+
         </style>
 
 		<meta charset="utf-8" />
@@ -31,15 +101,36 @@
 	        <span class="purple-wordart">WordArt</span>
         </span>
 
-        <p>I thought I would do this instead of write you a card because I got you a card a couple weeks ago for today but as I was writing the card, I was compelled to give it to you earlier. That has actually happened a few times now, I’m not sure if it’s because I lack delay of gratification or because I just want to make you happy now instead of at a later time in the future</p>
-        <p>The future is quite a thing, no one’s really got great predictions, but I will give it my best. In the future I will be spoiled, living a life greater than I could ever deserve. Having a beautiful family and wonderful life by your side. That’s what I want and I promise to do my damn hardest to make that happen. </p>
-        <p>Circling back, I’m thinking of the year to date that I have spent with you, and how fulfilling it has been for me. It’s not always perfect but I wouldn’t have it any other way, hopefully you feel the same. I’ll end this with a duly noted, heartfelt happy birthday, a wish for you “let every year of hers be better than the last” and to acknowledge something I admire about you; your competence and work ethic, I love to see how much you embrace things that are not working and persevere to make them better.</p>
-        <p>Love Az</p>
+        
 
         <a href="emoji.html" class="button">
             <button>
                 XXX
             </button>
         </a>
+
+        <div id="overlay">
+            <div id="textbox">
+                <!-- Close button -->
+                <span id="closeBtn" onclick="closeLetter()">✖</span>
+
+                <div id="normalText">
+                <p>I thought I would do this instead of write you a card because I got you a card a couple weeks ago for today but as I was writing the card, I was compelled to give it to you earlier. That has actually happened a few times now, I’m not sure if it’s because I lack delay of gratification or because I just want to make you happy now instead of at a later time in the future</p>
+                <p>The future is quite a thing, no one’s really got great predictions, but I will give it my best. In the future I will be spoiled, living a life greater than I could ever deserve. Having a beautiful family and wonderful life by your side. That’s what I want and I promise to do my damn hardest to make that happen. </p>
+                <p>Circling back, I’m thinking of the year to date that I have spent with you, and how fulfilling it has been for me. It’s not always perfect but I wouldn’t have it any other way, hopefully you feel the same. I’ll end this with a duly noted, heartfelt happy birthday, a wish for you “let every year of hers be better than the last” and to acknowledge something I admire about you; your competence and work ethic, I love to see how much you embrace things that are not working and persevere to make them better.</p>
+                <p>Love Az</p>
+                <button class="btn" onclick="showEmoji()">Show Emoji Version</button>
+                </div>
+
+                <div id="emojiText" style="display:none;">
+                <p>I thought I would do this instead of write you a card because I got you a card a couple weeks ago for today but as I was writing the card, I was compelled to give it to you earlier 💌. That has actually happened a few times now, I’m not sure if it’s because I lack delay of gratification 😅 or because I just want to make you happy now 😊 instead of at some later time.</p>
+                <p>The future is quite a thing 🔮, no one’s really got great predictions, but I will give it my best. In the future I will be spoiled, living a life far greater than I could ever deserve ✨. Having a beautiful family and wonderful life by your side 👨‍👩‍👧❤️. That’s what I want and I promise to do my damn hardest to make that happen 💪.</p>
+                <p>Circling back, I’m thinking of the year to date that I have spent with you, and how fulfilling it has been for me 🌟. It’s not always perfect but I wouldn’t have it any other way 💫, and I hope you feel the same 🤍.
+
+        I’ll end this with a duly noted, heartfelt happy birthday 🎂🎉, a wish for you — “let every year of hers be better than the last” 🌹— and to acknowledge something I admire about you; your competence and work ethic 💼✨. I love to see how much you embrace things that are not working and persevere to make them better 🌱.</p>
+                <p>Love Az ❤️</p>
+                </div>
+            </div>
+        </div>
 
     </body>
